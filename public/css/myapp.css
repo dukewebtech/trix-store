@@ -1,0 +1,500 @@
+@font-face { font-size: inherit; font-family:'Century-Thin'; src: url(fonts/Century-Goth-Thin.ttf);
+}
+html, body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    font-family:  "Segoe UI" !important;
+    overflow-x: hidden;
+}
+*, a, [href]  {
+    outline: none !important;
+    text-decoration: none !important;
+}
+section.App {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/splash-bg.jpg);
+    background-size: cover;
+}
+section.App .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(130deg, rgba(0, 102, 255, 1), 40%, rgba(0, 153, 255, .6));    
+}
+section.App .login {
+    position: relative;
+    margin: auto;
+    margin-top: 15%;;
+    width: 454px;
+    height: 330px;
+    padding: 50px;
+    padding-top: 30px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+}
+section.App .login h2 {
+    height: 35px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #06f;
+    font-size: 18px;
+    font-family:'Century-Thin';
+}
+section.App .login h2 span {
+    font-weight: bold;
+    color: #06f;;
+}
+section.App .login p {
+    position: relative;
+}
+section.App .login i {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    padding: 5px;
+    padding-top: 7px;
+    color: #06f;
+    font-size: 16px;
+    text-align: center;
+}
+section.App .login p input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #09f;
+    padding-left: 30px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: small;
+    font-family:'Century-Thin';
+}
+section.App .login p button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin-top: 20px;
+    color: #fff;
+    background: #06f;
+    border-radius: 5px;
+}
+section.App .headbar
+,
+section.App .sidebar
+,
+section.App .mainbar {
+    position: fixed;
+    top: 0;
+    background: #eee;
+}
+section.App .headbar {
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background: #4389ff;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+section.App .sidebar {
+    left: 0;
+    width: 20%;
+    height: 100%;
+    padding-top: 50px;
+    background: #ffffff;
+}
+section.App .mainbar {
+    left: 20%;
+    width: 80%;
+    height: 100%;
+    padding-top: 50px;
+    overflow: auto;
+}
+section.App .headbar .logobar {
+    display: inline-block;
+    z-index: 10;
+    width: 20%;
+    height: 50px;
+    padding: 10px;
+    padding-top: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family:'Century-Thin';
+}
+section.App .headbar .logobar img {
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+    border-radius: 100%;
+}
+section.App .headbar .logobar .hr {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    display: none;
+    width: 6%;
+    height: 3px;
+    transform: rotate(90deg);
+    background: #fff;
+}
+section.App .headbar .statica {
+    float: right;
+    height: 40px;
+    right: 0;
+    margin-right: 9%;
+    padding: 10px;
+    text-align: right;
+}
+section.App .headbar .statica a {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 13.5px;
+    font-family:'Century-Thin';
+}
+section.App .sidebar .userbar {
+    height: 120px;
+    padding-top: 10px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    background: url(../images/cover.jpg);
+    background-size: auto;
+    background-position: -50px -70px;
+}
+section.App .sidebar .userbar a {
+    color: #fff;
+}
+section.App .sidebar .userbar img {
+    background: #fff;
+    border-radius: 100%;
+}
+section.App .sidebar .userbar span {
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    font-family:'Century-Thin';
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+section.App .sidebar .userbar .role {
+    color: #eee;
+    font-size: small;
+    text-shadow: none;
+}
+section.App .sidebar nav {
+    margin-top: 50px;
+}
+section.App .sidebar nav ul {
+    margin: 0;
+    padding: 0;
+}
+section.App .sidebar nav ul li {
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family:'Century-Thin';
+    transition: 0.2s ease-in-out;
+}
+section.App .sidebar nav ul li.focus
+,
+section.App .sidebar nav ul li:hover {
+    background: #f6f6f6;
+}
+section.App .sidebar nav ul li i {
+    display: inline-block;
+    width: 20px;
+}
+section.App .mainbar .postbar {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background: url(../images/breadcrumb.jpg);
+    background-size: auto;
+    background-size: cover;
+}
+section.App .mainbar .content {
+    position: relative;
+    width: 80%;
+    padding: 50px;
+    padding-bottom: 20px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,.2);
+}
+section.App .mainbar .content h2 {
+    height: 40px;
+    color: #666;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .control {
+    height: 10px;
+    margin-bottom: 40px;
+    border-radius: 100px;
+    background: #f6f6f6;
+}
+section.App .mainbar .content h2 button {
+    float: right;
+    width: 150px;
+    height: 30px;
+    border: none;
+    color: #fff;
+    background: #4389ff;
+    border-radius: 100px;
+    font-size: 14px;
+}
+section.App .mainbar .content .card {
+    height: 150px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 20px;
+    padding-left: 30px;
+    color: #fff;
+    background: #8dc5f8;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content .card.bg {
+    background: #466099;
+}
+section.App .mainbar .content .card .infos {
+    font-size: 50px;
+}
+section.App .mainbar .content .card .label {
+    font-size: 14px;
+}
+section.App .mainbar .content .card .infos i {
+    float: right;
+}
+section.App .mainbar .content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content table thead th
+,
+section.App .mainbar .content table tbody td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+section.App .mainbar .content table thead th {
+    color: #4389ff;
+}
+section.App .mainbar .content table tbody td {
+    height: 50px;
+    color: #666666;
+    font-size: small;
+}
+section.App .mainbar .content table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+section.App .mainbar .content .removed td
+,
+section.App .mainbar .content .removed input
+ {
+    color: #ccc !important;
+    text-decoration: line-through !important;
+}
+section.App .mainbar .content .removed button {
+    background: #ccc !important;
+}
+section.App .mainbar .content table input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    background: none;
+}
+section.App .mainbar .content form {
+    width: 500px;
+}
+section.App .mainbar .content form p {
+    position: relative;
+    font-size: small;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content form p i {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    padding: 10px;
+    color: #4389ff;
+}
+section.App .mainbar .content form p input
+,
+section.App .mainbar .content form p select {
+    height: 40px;
+    width: 100%;
+    padding-left: 30px;
+    color: #466099;
+    border: none;
+    border-bottom: 1px solid #4389ff;
+}
+section.App .mainbar .content form p select {
+    padding-left: 25px;
+}
+section.App .mainbar .content form p button {
+    display: inline-block !important;
+    width: 100% !important;
+    height: 40px !important;
+}
+section.App .mainbar .content form p .split {
+    width: 49.6% !important;
+}
+section.App .mainbar .content #update
+,
+section.App .mainbar .content #delete {
+    display: block;
+    width: 100px;
+    height: 25px;
+    border: none;
+    margin: auto;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #fff;
+    background: none;
+    border-radius: 3px;
+    text-decoration: none !important;
+}
+section.App .mainbar .content #update {
+    background: #4389ff;
+}
+section.App .mainbar .content #delete {
+    background: #c30;
+}
+section.App .mainbar .content .w-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+    overflow: auto;
+}
+section.App .mainbar .content .preview {
+    position: relative;
+    margin: auto;
+    margin-top: 120px;
+    width: 50%;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+}
+section.App .mainbar .content .preview .header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    font-size: small;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content .header img {
+    position: absolute;
+}
+section.App .mainbar .content .header h3 {
+    text-align: center;
+    line-height: 50px;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content .header .info {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+section.App .mainbar .content .preview .orders {
+    margin-bottom: 5px;
+}
+section.App .mainbar .content .preview .hr {
+    height: 25px;
+    border-bottom: 1px solid #eee;
+    font-size: small;
+    font-family:'Century-Thin';
+}
+section.App .mainbar .content .signform {
+    display: inline-block;
+    width: 49.5%;
+    font-size: small;
+    color: #999;
+    margin-top: 50px;
+    text-align: center;
+}
+section.App .mainbar .content .signform input {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+@media only print {
+section.App {
+    position: relative;
+    background: #fff;
+}
+section.App .headbar
+,
+section.App .sidebar {
+    display: none;
+}
+section.App .mainbar {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+    left: 0 !important;
+}
+section.App .content {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+}
+section.App .content table:not(#orders)  {
+    display: none;
+}
+section.App .postbar
+,
+section.App .control
+,
+section.App .no-print   {
+    display: none;
+}
+section.App .content h2 {
+    display: none;
+}
+section.App .content .preview {
+    width: 60% !important;
+}
+section.App .mainbar .content .w-overlay {
+    position: relative;
+}
+}
+@media only screen and (min-width: 240px) and (max-width:320px)
+                       ,
+                       (min-width: 320px) and (max-width:480px)
+                       ,
+                       (min-width: 480px) and (max-width:768px)
+{
+section.App {
+    display: none;
+}
+}

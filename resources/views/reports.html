@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-store :: Reports</title>
+
+    <link rel="shortcut icon" href="images/favicon.png"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/ion-icon.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script src="js/jquery.js"> </script>
+    <script src="js/app.js"> </script>
+</head>
+
+<body>
+    <section class="App">
+        <section class="headbar">
+            <div class="logobar">
+                <img src="images/logo.png" width="50" height="50" alt=""/> E-STORE <span class="hr"></span>
+            </div>
+
+            <div class="statica">
+                <a href="register.blade.php"><i class="ion-ios-person"></i> Register Users</a>
+                <a href="login.blade.php"><i class="ion-ios-log-out"></i> Sign Out</a>
+            </div>
+        </section>
+
+        <section class="sidebar">
+            <div class="userbar">
+                <a href="account.blade.php">
+                    <img src="images/avatar.png" width="50" height="50" alt=""/>
+                    <span class="user">Samson Orode</span>
+                    <span class="role">Manager</span>
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <a href="index.blade.php"><li><i class="ion-ios-menu"></i> Dashboard</li></a>
+                    <a href="stocks.blade.php"><li><i class="ion-ios-checkbox"></i> Stock's</li></a>
+                    <a href="requests.blade.php"><li ><i class="ion-ios-basket"></i> Requisitions</li></a>
+                    <a href="reports.html"><li class="focus"><i class="ion-ios-pie"></i> Reports</li></a>
+                    <a href="login.blade.php"><li><i class="ion-ios-person"></i> Sign Out</li></a>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="mainbar">
+            <div class="postbar" style="background: url(images/headerbg-4.jpg); background-size: auto;background-size: cover"></div>
+
+            <div class="content">
+                <div class="control"></div>
+
+                <h2>Reports <a href="#download"><button><i class="ion-ios-arrow-round-down"></i> Download</button></a></h2>
+
+
+                <table id="requests">
+                    <thead>
+                        <th>S/N</th>
+                        <th>Item</th>
+                        <th>Cost</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Timestamp</th>
+                        <th>Status</th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Garri</td>
+                            <td>&#8358;25000</td>
+                            <td>1</td>
+                            <td>&#8358;25000</td>
+                            <td>20/12/19 - 05:20PM</td>
+                            <td><button id="update">Approved</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Noodles</td>
+                            <td>&#8358;25000</td>
+                            <td>1</td>
+                            <td>&#8358;10000</td>
+                            <td>20/12/19 - 05:20PM</td>
+                            <td><button id="update">Approved</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Vegetable Oil</td>
+                            <td>&#8358;12000</td>
+                            <td>1</td>
+                            <td>&#8358;25000</td>
+                            <td>20/12/19 - 05:20PM</td>
+                            <td><button id="update">Approved</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Rice</td>
+                            <td>&#8358;32000</td>
+                            <td>1</td>
+                            <td>&#8358;25000</td>
+                            <td>20/12/19 - 05:20PM</td>
+                            <td><button id="update">Approved</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>Turkey & Chicken</td>
+                            <td>&#8358;15000</td>
+                            <td>1</td>
+                            <td>&#8358;25000</td>
+                            <td>20/12/19 - 05:20PM</td>
+                            <td><button id="update">Approved</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

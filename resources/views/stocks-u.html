@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-store :: Stocks</title>
+
+    <link rel="shortcut icon" href="images/favicon.png"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/ion-icon.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script src="js/jquery.js"> </script>
+    <script src="js/app.js"> </script>
+</head>
+
+<body>
+    <section class="App">
+        <section class="headbar">
+            <div class="logobar">
+                <img src="images/logo.png" width="50" height="50" alt=""/> E-STORE <span class="hr"></span>
+            </div>
+
+            <div class="statica">
+                <a href="register.blade.php"><i class="ion-ios-person"></i> Register Users</a>
+                <a href="login.blade.php"><i class="ion-ios-log-out"></i> Sign Out</a>
+            </div>
+        </section>
+
+        <section class="sidebar">
+            <div class="userbar">
+                <a href="account.blade.php">
+                    <img src="images/avatar.png" width="50" height="50" alt=""/>
+                    <span class="user">Samson Orode</span>
+                    <span class="role">Manager</span>
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <a href="index.blade.php"><li><i class="ion-ios-menu"></i> Dashboard</li></a>
+                    <a href="stocks.blade.php"><li class="focus"><i class="ion-ios-checkbox"></i> Stock's</li></a>
+                    <a href="requests.blade.php"><li><i class="ion-ios-basket"></i> Requisitions</li></a>
+                    <a href="reports.html"><li><i class="ion-ios-pie"></i> Reports</li></a>
+                    <a href="login.blade.php"><li><i class="ion-ios-person"></i> Sign Out</li></a>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="mainbar">
+            <div class="postbar" style="background: url(images/headerbg-2.jpg); background-size: auto;background-size: cover"></div>
+
+            <div class="content">
+                <div class="control"></div>
+
+                <h2>Edit Stock <a href="stocks.blade.php"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
+
+                <form method="post" action="stocks.blade.php">
+                    <p><i class="ion-ios-nutrition"></i> <input type="text" name="" placeholder="Item Name" value="Garri"/></p>
+
+                    <p>
+                        <i class="ion-ios-funnel"></i>
+                        <select>
+                            <option selected disabled>Measurement</option>
+                            <option value="basket" selected>Basket</option>
+                            <option value="cups">Cup</option>
+                            <option value="bags">Bags</option>
+                            <option value="carton">Carton</option>
+                            <option value="pack">Pack</option>
+                            <option value="litres">Litres</option>
+                            <option value="single">Single</option>
+                        </select>
+                    </p>
+
+                    <p><i class="ion-ios-cash"></i> <input type="text" name="" placeholder="Cost Per Unit" value="25000"/></p>
+
+                    <p><i class="ion-ios-add"></i> <input type="text" name="" placeholder="Available" value="10"/></p>
+
+                    <p><i class="ion-ios-remove"></i> <input type="text" name="" placeholder="Minimum Unit" value="1"/></p>
+
+                    <p><button id="update" class="split">Save</button> <button id="delete"class="split">Delete</button></p>
+                </form>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
