@@ -8,13 +8,14 @@
 
     <link rel="shortcut icon" href="images/favicon.png"/>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/ion-icon.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/myapp.css"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
 
-    <script src="js/jquery.js"> </script>
-    <script src="js/myapp.js"> </script>
+    <link rel="stylesheet" href="{{ asset('css/ion-icon.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/myapp.css') }}"/>
+
+    <script src="{{ asset('js/jquery.js')}}"> </script>
+    <script src="{{ asset('js/myapp.js')}}"> </script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
     <section class="sidebar">
         <div class="userbar">
             <a href="account.html">
-                <img src="images/avatar.png" width="50" height="50" alt=""/>
+                <img src="{{asset('images/avatar.png')}}" width="50" height="50" alt=""/>
                 <span class="user">Samson Orode</span>
                 <span class="role">Manager</span>
             </a>
@@ -42,8 +43,9 @@
         <nav>
             <ul>
                 <a href="index"><li class="focus"><i class="ion-ios-menu"></i> Dashboard</li></a>
-                <a href="stocks"><li><i class="ion-ios-checkbox"></i> Stock's</li></a>
+                <a href="/stocks/index"><li><i class="ion-ios-checkbox"></i> Stock's</li></a>
                 <a href="requests"><li><i class="ion-ios-basket"></i> Requisitions</li></a>
+                <a href="/measurements/index"><li><i class="ion-ios-basket"></i> Measurements</li></a>
                 <a href="reports"><li><i class="ion-ios-pie"></i> Reports</li></a>
                 <a href="login"><li><i class="ion-ios-person"></i> Sign Out</li></a>
             </ul>
@@ -51,7 +53,7 @@
     </section>
 
     <section class="mainbar">
-        <div class="postbar" style="background: url(images/headerbg-1.jpg); background-size: auto;background-size: cover"></div>
+        <div class="postbar" style="background: url(asset{{('images/headerbg-1.jpg')}}); background-size: auto;background-size: cover"></div>
 
        @yield('content');
     </section>

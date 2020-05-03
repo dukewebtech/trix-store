@@ -6,7 +6,7 @@
 
     <h2>Register <a href="index.blade.php"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
 
-    <form method="post" action="stocks.blade.php">
+    <form method="post" action="stocks/index.blade.php">
 
         <p><i class="ion-ios-person"></i> <input type="text" name="" placeholder="Username"/></p>
 

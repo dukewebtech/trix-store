@@ -19,6 +19,7 @@ class CreateStocksTable extends Migration
             $table->integer('costPerUnit');
             $table->integer('availableQuantity');
             $table->integer('minimumUnit');
+            $table->integer('measurementId');
             $table->timestamps();
         });
     }

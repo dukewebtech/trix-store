@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,60 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/stocks', function () {
-    return view('requests');
-});
-Route::get('/requests', function () {
-    return view('requests');
-});
-Route::get('/reports', function () {
-    return view('requests');
-});
-Route::get('/login', function () {
-    return view('requests');
-});
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('privilege')->name('privilege.')->middleware(['auth', 'auth.admin'])->namespace('/Privilege')->group(function(){
-    Route::get('index', 'PrivilegeController@index')->name('index');
-    Route::get('create', 'PrivilegeController@create')->name('create');
-    Route::post('store', 'PrivilegeController@store')->name('store');
-    Route::get('{id}', 'PrivilegeController@show')->name('show');
-    Route::get('{id}/edit', 'PrivilegeController@edit')->name('edit');
-    Route::put('{privilege}', 'PrivilegeController@update')->name('update');
-    Route::delete('{id}', 'PrivilegeController@destroy')->name('destroy');
+Route::prefix('stocks')->name('stocks.')->group(function(){
+        Route::get('index', 'StockController@index')->name('index');
+        Route::get('create', 'StockController@create')->name('create');
+        Route::post('store', 'StockController@store')->name('store');
+        Route::get('{id}', 'StockController@show')->name('show');
+        Route::get('{id}/edit', 'StockController@edit')->name('edit');
+        Route::put('{user}', 'StockController@update')->name('update');
+        Route::delete('{id}', 'StockController@destroy')->name('destroy');
 
 });
+Route::prefix('measurements')->name('measurements.')->group(function(){
+    Route::get('index', 'MeasurementController@index')->name('index');
+    Route::get('create', 'MeasurementController@create')->name('create');
+    Route::POST('store', 'MeasurementController@store')->name('store');
+    Route::get('{measure}/edit', 'MeasurementController@edit')->name('edit');
+    Route::put('{measures}', 'MeasurementController@update')->name('update');
+//    Route::delete('{id}', 'MeasurementController@destroy')->name('destroy');
+//    Route::get('{id}', 'MeasurementController@show')->name('show');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
