@@ -2,28 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
 {
-    public function index(){
-        $stocks = Stock::paginate(20);
-        return view('stocks.index',compact('stocks'));
+    public function __construct(){
+        $this->middleware('auth');
     }
 
-    public function create(){
-        return view('stocks.create');
+    public function index(Request $request){
+
+        return view('stocks')->with(['title' => 'Dashboard']);
+
     }
 
-    public function store(){
-        $newStock = Stock:: create([
-            'item' => request('item'),
-            'costPerUnit' => request('costPerUnit'),
-            'availableQuantity' => request('availableQuantity'),
-            'minimumUnit' => request('minimumUnit'),
-            'measurementId' => request('measurementId'),
-        ]);
-        return back();
+    public function create(Request $request){
+
+        return view('stocks-c')->with(['title' => 'New Stock']);
+        
+    }
+
+    public function update(Request $request){
+
+        return view('stocks-u')->with(['title' => 'Update Stock']);
+        
+    }
+
+    public function delete(Request $request){
+
+        //delete stock
+
+        //redirect back
     }
 }

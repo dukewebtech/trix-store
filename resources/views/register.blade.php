@@ -1,30 +1,43 @@
 @extends('layouts.header');
 
 @section('content')
-<div class="content">
+    <div class="postbar" style="background: url(/images/headerbg-1.jpg); background-size: auto;background-size: cover"></div>
+
+    <div class="content">
     <div class="control"></div>
 
-    <h2>Register <a href="index.blade.php"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
+    <h2>Register <a href="/"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
 
-    <form method="post" action="stocks/index.blade.php">
+    @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+    @endif
 
-        <p><i class="ion-ios-person"></i> <input type="text" name="" placeholder="Username"/></p>
+    <form method="post" action="/account/create">
+        @csrf
 
-        <p><i class="ion-ios-mail"></i> <input type="text" name="" placeholder="E-mail"/></p>
+        <p><i class="ion-ios-person"></i> <input type="text" name="username" placeholder="Username"/></p>
+
+        <p><i class="ion-ios-mail"></i> <input type="text" name="email" placeholder="E-mail"/></p>
 
         <p>
             <i class="ion-ios-star"></i>
-            <select>
+            <select name="position" class="custom-select">
                 <option selected disabled>Position</option>
-                <option value="Manager">Manager</option>
-                <option value="Admin">Admin</option>
-                <option value="Personnel">Personnel</option>
+                @foreach($privileges as $position)
+
+                <option value="{{ $position->privilegeId }}">{{ $position->name }}</option>
+                @endforeach
+
             </select>
         </p>
 
-        <p><i class="ion-ios-lock"></i> <input type="text" name="" placeholder="Password"/></p>
+        <p><i class="ion-ios-lock"></i> <input type="password" name="password" placeholder="Password"/></p>
 
-        <p><i class="ion-ios-lock"></i> <input type="text" name="" placeholder="Confirm Password"/></p>
+        <p><i class="ion-ios-lock"></i> <input type="password" name="confirmPassword" placeholder="Confirm Password"/></p>
 
         <p><button id="update">Save</button></p>
 

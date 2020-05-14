@@ -1,10 +1,12 @@
 @extends('layouts.header');
 
 @section('content')
+    <div class="postbar" style="background: url(/images/headerbg-1.jpg); background-size: auto;background-size: cover"></div>
+
     <div class="content">
         <div class="control"></div>
 
-        <h2>Dashboard <a href="reports.html"><button><i class="ion-ios-stats"></i> Summary</button></a></h2>
+        <h2>Dashboard <a href="/reports"><button><i class="ion-ios-stats"></i> Summary</button></a></h2>
 
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
@@ -38,4 +40,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection

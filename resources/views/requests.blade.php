@@ -1,10 +1,12 @@
 @extends('layouts.header');
 
 @section('content')
+    <div class="postbar" style="background: url(/images/headerbg-3.jpg); background-size: auto;background-size: cover"></div>
+
     <div class="content">
         <div class="control"></div>
 
-        <h2>Requisitions <a href="#approve"><button><i class="ion-ios-checkmark"></i> Approve</button></a></h2>
+        <h2>Requisitions <a href="#approve"><button><i class="ion-ios-checkmark"></i> Preview</button></a></h2>
 
 
         <table id="requests">
@@ -19,56 +21,23 @@
             </thead>
 
             <tbody>
+            
+            @if($requisition > 0)
+            @foreach ($requisition as $request)
+                
             <tr>
-                <td>1</td>
-                <td>Garri</td>
-                <td>&#8358;25000</td>
+                <td>{{ $request->id }}</td>
+                <td>{{ $request->item }}</td>
+                <td>&#8358;{{ $request->costPerUnit }}</td>
                 <td><input type="text" name="" placeholder="Quantity"/></td>
-                <td>&#8358;25000</td>
-                <td>20/12/19 - 05:20PM</td>
+                <td>&#8358;{{ $request->costPerUnit }}</td>
+                <td>{{ date("d/m/y h:i:A", strtotime(str_replace([',','-'], '', $request->created_at))) }}</td>
                 <td><button id="delete">Remove</button></td>
             </tr>
 
-            <tr>
-                <td>2</td>
-                <td>Noodles</td>
-                <td>&#8358;25000</td>
-                <td><input type="text" name="" placeholder="Quantity"/></td>
-                <td>&#8358;10000</td>
-                <td>20/12/19 - 05:20PM</td>
-                <td><button id="delete">Remove</button></td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Vegetable Oil</td>
-                <td>&#8358;12000</td>
-                <td><input type="text" name="" placeholder="Quantity"/></td>
-                <td>&#8358;25000</td>
-                <td>20/12/19 - 05:20PM</td>
-                <td><button id="delete">Remove</button></td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>Rice</td>
-                <td>&#8358;32000</td>
-                <td><input type="text" name="" placeholder="Quantity"/></td>
-                <td>&#8358;25000</td>
-                <td>20/12/19 - 05:20PM</td>
-                <td><button id="delete">Remove</button></td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>Turkey & Chicken</td>
-                <td>&#8358;15000</td>
-                <td><input type="text" name="" placeholder="Quantity"/></td>
-                <td>&#8358;25000</td>
-                <td>20/12/19 - 05:20PM</td>
-                <td><button id="delete">Remove</button></td>
-            </tr>
-            </tbody>
+            @endforeach
+            @endif
+        </tbody>
         </table>
 
         <div class="w-overlay">
