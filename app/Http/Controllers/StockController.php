@@ -21,7 +21,7 @@ class StockController extends Controller
         return view('stocks.update',compact('stock'));
     }
 
-
+    
     public function store(){
         $newStock = Stock:: create([
             'item' => request('item'),
