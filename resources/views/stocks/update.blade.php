@@ -5,32 +5,34 @@
 <div class="content">
                 <div class="control"></div>
 
-                <h2>Edit Stock <a href="index.blade.php"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
+                <h2>Edit Stock <a href="stocks/index"><button><i class="ion-ios-arrow-round-back"></i> Back</button></a></h2>
 
-                <form method="post" action="index.blade.php">
-                    <p><i class="ion-ios-nutrition"></i> <input type="text" name="" placeholder="Item Name" value="Garri"/></p>
+    <form method="post" action="/stocks/{{$stock->id}}">
 
-                    <p>
-                        <i class="ion-ios-funnel"></i>
-                        <select>
-                            <option selected disabled>Measurement</option>
-                            <option value="basket" selected>Basket</option>
-                            <option value="cups">Cup</option>
-                            <option value="bags">Bags</option>
-                            <option value="carton">Carton</option>
-                            <option value="pack">Pack</option>
-                            <option value="litres">Litres</option>
-                            <option value="single">Single</option>
-                        </select>
-                    </p>
+        {{csrf_field()}}
+        @method('PUT')
+        <p><i class="ion-ios-nutrition"></i> <input type="text" name="item" value="{{$stock->item}}" placeholder="Item Name"/></p>
 
-                    <p><i class="ion-ios-cash"></i> <input type="text" name="" placeholder="Cost Per Unit" value="25000"/></p>
+        <p>
+            <i class="ion-ios-funnel"></i>
+            <select name="measurementId">
+                <option selected disabled>Measurement</option>
+                @foreach($measurement as $measure){
 
-                    <p><i class="ion-ios-add"></i> <input type="text" name="" placeholder="Available" value="10"/></p>
+                <option value="{{$measure->id}}">{{$measure->name}}</option>
+                    @endforeach
+            </select>
+        </p>
 
-                    <p><i class="ion-ios-remove"></i> <input type="text" name="" placeholder="Minimum Unit" value="1"/></p>
+        <p><i class="ion-ios-cash"></i> <input type="number" name="costPerUnit"  value="{{$stock->costPerUnit}}" placeholder="Cost Per Unit"/></p>
 
-                    <p><button id="update" class="split">Save</button> <button id="delete"class="split">Delete</button></p>
-                </form>
+        <p><i class="ion-ios-add"></i> <input type="number" name="availableQuantity"  value="{{$stock->availableQuantity}}" placeholder="Available"/></p>
+
+        <p><i class="ion-ios-remove"></i> <input type="number" name="minimumUnit" value="{{$stock->availableQuantity}}" placeholder="Minimum Unit"/></p>
+
+        {{--                    <p><button id="post">Save</button></p>--}}
+
+        <button type="submit" class="btn btn-success">Publish</button>
+    </form>
             </div>
 @endsection

@@ -69,6 +69,10 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                    @can('admin-access',Auth::user())
+                            <a href="{{ url('/mypriviledge') }}">My Priveledge</a>
+                        @endcan
+
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

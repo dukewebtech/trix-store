@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Measurement;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -26,5 +27,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        View()->composer('*', function($view){
+            $measurement= Measurement::all();
+
+            $view->with(compact('measurement'));
+        });
     }
 }

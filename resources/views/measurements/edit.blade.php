@@ -10,7 +10,7 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="exampleInputEmail1">Title </label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="name"  placeholder="{{$measure->name}}" value="">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="name"  placeholder="" value="{{$measure->name}}">
                 <small id="emailHelp" class="form-text text-muted">Enter a title for your post.</small>
             </div>
             <button type="submit" class="btn btn-success">Publish</button>

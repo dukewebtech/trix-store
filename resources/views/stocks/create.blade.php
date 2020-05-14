@@ -15,13 +15,10 @@
                         <i class="ion-ios-funnel"></i>
                         <select name="measurementId">
                             <option selected disabled>Measurement</option>
-                            <option value="1">Basket</option>
-                            <option value="2">Cup</option>
-                            <option value="7">Bags</option>
-                            <option value="3">Carton</option>
-                            <option value="4">Pack</option>
-                            <option value="5">Litres</option>
-                            <option value="6">Single</option>
+                            @foreach($measurement as $measure){
+
+                            <option value="{{$measure->id}}">{{$measure->name}}</option>
+                            @endforeach
                         </select>
                     </p>
 
