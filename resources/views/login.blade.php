@@ -23,14 +23,21 @@
         <div class="login">
             <h2>Login to <span>Store</span> </h2>
 
-            <form action="index.blade.php" method="post">
-                <p><i class="ion-ios-person"></i> <input type="text" name="" placeholder="Username"/></p>
+            <form action="/login" method="post">
+                @csrf
 
-                <p><i class="ion-ios-lock"></i> <input type="password" name="" placeholder="Password"/></p>
+                <p><i class="ion-ios-person"></i> <input type="text" name="username" placeholder="Username"/></p>
+
+                <p><i class="ion-ios-lock"></i> <input type="password" name="password" placeholder="Password"/></p>
 
                 <p><button><span class="io-ios-finger"></span> Login</button></p>
             </form>
         </div>
     </section>
+
+    @if($errors->any())
+        <script>window.alert('{{ $errors->first() }}')</script>
+
+    @endif
 </body>
 </html>

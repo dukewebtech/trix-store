@@ -28,10 +28,10 @@
             <td>{{$stock->measurement->name}}</td>
             <td>₦{{$stock->costPerUnit}}</td>
             <td>{{$stock->availableQuantity}}</td>
-            <td>1</td>
+            <td>{{$stock->minimumUnit}}</td>
             <td>{{$stock->updated_at->diffForHumans()}}</td>
             <td>
-                <a href="{{$stock->id}}/edit"><button id="update">Update</button></a>
+                <a href="stocks/{{$stock->id}}/edit"><button id="update">Update</button></a>
                 <a href="#"><button id="delete">Delete</button></a>
             </td>
         </tr>

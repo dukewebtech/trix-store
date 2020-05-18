@@ -1,4 +1,4 @@
-git<?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class StockController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $stocks = Stock::orderBy('created_at', 'desc')->get();
         return view('stocks.index',compact('stocks'));
@@ -21,7 +25,7 @@ class StockController extends Controller
         return view('stocks.update',compact('stock'));
     }
 
-    
+
     public function store(){
         $newStock = Stock:: create([
             'item' => request('item'),

@@ -28,7 +28,7 @@
 
         <p><i class="ion-ios-add"></i> <input type="number" name="availableQuantity"  value="{{$stock->availableQuantity}}" placeholder="Available"/></p>
 
-        <p><i class="ion-ios-remove"></i> <input type="number" name="minimumUnit" value="{{$stock->availableQuantity}}" placeholder="Minimum Unit"/></p>
+        <p><i class="ion-ios-remove"></i> <input type="number" name="minimumUnit" value="{{$stock->minimumUnit}}" placeholder="Minimum Unit"/></p>
 
         {{--                    <p><button id="post">Save</button></p>--}}
 
